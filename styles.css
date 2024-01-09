@@ -8,14 +8,108 @@
     --clr-1: hsl(31, 77%, 52%);
     --clr-2: hsl(184, 100%, 22%);
     --clr-3: hsl(179, 100%, 13%);
-    --clr-white: hsla(0, 0%, 100%, 0.75) ; /* paragraphs */
+    --clr-white-p: hsla(0, 0%, 100%, 0.75) ; /* paragraphs */
     --clr-white: hsl(0, 0%, 95%); /* background, headings, buttons */
 }
 
 body {
+    margin: 0;
+    padding: 0;
     font-size: 15px;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 4rem 1rem;
+
+}
+
+.container__box {
+    /* border: 1px solid red; */
+    padding: 3rem;
+}
+
+.container__box h2 {
+    color: var(--clr-white);
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 700;
+}
+
+.container__box p {
+    color: var(--clr-white-p);
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+.container__box:nth-child(1) {
+    background: var(--clr-1);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.container__box:nth-child(2) {
+    background: var(--clr-2);
+}
+.container__box:nth-child(3) {
+    background: var(--clr-3);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+/* ===== Buttons ===== */
+.btn {
+    border-radius: 20px;
+    padding: 0.7rem 1rem;
+    background: var(--clr-white);
+}
+
+.btn:hover {
+    background: inherit;
+    color: var(--clr-white);
+    border: 1px solid var(--clr-white);
+}
+
+.btn-clr1 {
+    color: var(--clr-1);
+    border: 1px solid var(--clr-1);
+}
+.btn-clr2 {
+    color: var(--clr-2);
+    border: 1px solid var(--clr-2);
+}
+.btn-clr3 {
+    color: var(--clr-3);
+    border: 1px solid var(--clr-3);
+}
+
+@media (min-width: 600px) {
+    .container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .container__box:nth-child(1) {
+        border-radius: none;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 10px;
+    }
+
+    .container__box:nth-child(3) {
+        border-radius: none;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+}
+
+@media (min-width: 950px) {
+    .container {
+        margin: 8rem 10rem;
+    }
+}
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
