@@ -26,8 +26,10 @@ body {
 }
 
 .container__box {
-    /* border: 1px solid red; */
     padding: 3rem;
+    display: grid;
+    justify-items: start;
+    gap: 1.5rem;
 }
 
 .container__box h2 {
@@ -63,6 +65,8 @@ body {
     border-radius: 20px;
     padding: 0.7rem 1rem;
     background: var(--clr-white);
+    transition: all 0.5s;
+    cursor: pointer;
 }
 
 .btn:hover {
